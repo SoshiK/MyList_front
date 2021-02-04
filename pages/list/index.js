@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
 const axios = require("axios");
-const BACKEND_URL = process.env.BACKEND_URL;
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 export default function List() {
   const [lists, setLists] = useState([]);
