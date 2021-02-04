@@ -8,6 +8,7 @@ export default function Home() {
   const router = useRouter();
   const login = () => {
     const text = document.getElementById("text");
+    console.log(process.env.PASSWORD);
     if (text.value === process.env.PASSWORD) {
       router.push("list");
     }else {
