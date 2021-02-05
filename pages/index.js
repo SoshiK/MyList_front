@@ -22,7 +22,6 @@ export default function Home() {
       <Head>
         <title>MyList</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="viewpoint" content="width=device-width, initial-scale=1"></meta>
       </Head>
       <div className="bg-blue-600 w-full h-16 flex items-center justify-center">
         <p className="text-center text-white font-serif">Koike Memo</p>
