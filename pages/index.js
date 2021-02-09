@@ -10,10 +10,10 @@ export default function Home() {
     if (text.value === process.env.NEXT_PUBLIC_PASSWORD) {
       router.push("list");
     }else {
-      axios.get(`${BACKEND_URL}/`)
-        .then((res) => {
-          console.log(res);
-        })
+      // axios.get(`${BACKEND_URL}/`)
+      //   .then((res) => {
+      //     console.log(res);
+      //   })
     }
   }
 

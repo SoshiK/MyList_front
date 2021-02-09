@@ -5,8 +5,8 @@ function MyApp({ Component, pageProps }) {
   return (
   <>
   <Head>
-  <meta charSet="utf-8" />
-  <link rel="manifest" href="/manifest.json" />
+    <meta charSet="utf-8" />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="viewpoint" content="width=device-width, initial-scale=1"></meta>
     <link rel="apple-touch-icon" href="/icon.png"></link>
     <meta name="theme-color" content="#2563EB" />
