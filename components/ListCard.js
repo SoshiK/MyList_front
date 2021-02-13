@@ -1,6 +1,6 @@
 export default function ListCard(props) {
   return (
-    <div class="w-4/6">
+    <div class="w-4/6 mb-4">
       <div class="overflow-hidden shadow-md">
         <div class="px-6 py-4 bg-white font-bold font-serif uppercase">
           {props.title}
