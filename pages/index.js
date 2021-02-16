@@ -1,7 +1,5 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-const axios = require("axios");
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 export default function Home() {
   const router = useRouter();
@@ -9,11 +7,8 @@ export default function Home() {
     const text = document.getElementById("text");
     if (text.value === process.env.NEXT_PUBLIC_PASSWORD) {
       router.push("list");
-    }else {
-      // axios.get(`${BACKEND_URL}/`)
-      //   .then((res) => {
-      //     console.log(res);
-      //   })
+    } else {
+      alert("Invalid password");
     }
   }
 
