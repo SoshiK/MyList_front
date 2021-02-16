@@ -6,7 +6,8 @@ export default function ListCard(props) {
     router.push({
       pathname: "/item",
       query: {
-        id: props.id
+        id: props.id,
+        title: props.title
       }
     })
   }
