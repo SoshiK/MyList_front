@@ -11,7 +11,6 @@ export default function List() {
   useEffect(() => {
     axios.get(`${BACKEND_URL}/api/list`)
       .then((res) => {
-        console.log(res);
         setLists(res.data.result);
       })
   },[])
