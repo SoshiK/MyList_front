@@ -1,4 +1,17 @@
+const axios = require("axios");
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
+
 export default function ItemCard(props) {
+  const clickDelete = () => {
+    axios.delete(`${BACKEND_URL}/api/item/${props.id}`)
+      .then((res) => {
+        if(res.data.status === "ok") {
+          props.setIsRefresh(props.id);
+        } else {
+          alert("Woops! Something was wrong!");
+        }
+      })
+  };
   return (
     <div className="w-4/6 mb-4">
       <div className="overflow-hidden shadow-md">
@@ -12,6 +25,14 @@ export default function ItemCard(props) {
           <a 
             className="text-blue-600 font-serif text-xs"
             href={props.url}>{props.url}</a>
+        </div>
+        <div className="p-3 bg-white border-gray-200 text-right">
+          <button 
+            className="bg-blue-600 shadow-md text-xs text-white font-serif py-2 px-4 hover:bg-red-700 rounded uppercase" 
+            onClick={clickDelete}
+          >
+            DELETE
+          </button>
         </div>
       </div>
     </div>

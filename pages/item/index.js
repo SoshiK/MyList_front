@@ -9,12 +9,13 @@ export default function Item() {
   const router = useRouter();
   const { id, title } = router.query;
   const [items, setItems] = useState([]);
+  const [isRefresh, setIsRefresh] = useState("");
   useEffect(() => {
     axios.get(`${BACKEND_URL}/api/item/${id}`)
       .then((res) => {
         setItems(res.data.result);
       }) 
-  },[])
+  },[isRefresh])
   const createItem = () => {
     router.push({
       pathname: "/item/create",
@@ -45,7 +46,7 @@ export default function Item() {
           onClick={createItem}
         >+</button>
       </div>
-      <Allitem allItems={items}/>
+      <Allitem allItems={items} setIsRefresh={setIsRefresh}/>
     </div>
   );
 }

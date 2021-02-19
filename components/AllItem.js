@@ -11,6 +11,7 @@ export default function AllItem(props) {
         url = {item.url}
         key = {item.id}
         id = {item.id}
+        setIsRefresh = {props.setIsRefresh}
       />
     )
   }
