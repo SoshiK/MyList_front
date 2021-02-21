@@ -11,6 +11,16 @@ export default function ListCard(props) {
       }
     })
   }
+  const clickEdit = () => {
+    router.push({
+      pathname: "/list/edit",
+      query: {
+        id: props.id,
+        title: props.title,
+        description: props.description
+      }
+    })
+  }
   return (
     <div className="w-4/6 mb-4">
       <div className="overflow-hidden shadow-md">
@@ -21,12 +31,18 @@ export default function ListCard(props) {
           {props.description}
         </div>
         <div className="p-3 bg-white border-gray-200 text-right">
-        <button 
-          className="bg-blue-600 shadow-md text-xs text-white font-serif py-2 px-4 hover:bg-blue-800 rounded uppercase" 
-          onClick={click}
-        >
-          See Detail
-        </button>
+          <button 
+            className="bg-blue-600 shadow-md mr-3 text-xs text-white font-serif py-2 px-4 hover:bg-blue-800 rounded uppercase" 
+            onClick={clickEdit}
+          >
+            Edit
+          </button>
+          <button 
+            className="bg-blue-600 shadow-md text-xs text-white font-serif py-2 px-4 hover:bg-blue-800 rounded uppercase" 
+            onClick={click}
+          >
+            See Detail
+          </button>
         </div>
       </div>
     </div>
