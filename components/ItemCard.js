@@ -1,7 +1,9 @@
+import { useRouter } from "next/router";
 const axios = require("axios");
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 export default function ItemCard(props) {
+  const router = useRouter();
   const clickDelete = () => {
     axios.delete(`${BACKEND_URL}/api/item/${props.id}`)
       .then((res) => {
@@ -11,6 +13,17 @@ export default function ItemCard(props) {
           alert("Woops! Something was wrong!");
         }
       })
+  };
+  const clickEdit = () => {
+    router.push({
+      pathname: "/item/edit",
+      query: {
+        id: props.id,
+        title: props.title,
+        description: props.description,
+        url: props.url
+      }
+    })
   };
   return (
     <div className="w-4/6 mb-4">
@@ -27,6 +40,12 @@ export default function ItemCard(props) {
             href={props.url}>{props.url}</a>
         </div>
         <div className="p-3 bg-white border-gray-200 text-right">
+        <button 
+            className="bg-blue-600 shadow-md mr-3 text-xs text-white font-serif py-2 px-4 hover:bg-blue-800 rounded uppercase" 
+            onClick={clickEdit}
+          >
+            EDIT
+          </button>
           <button 
             className="bg-blue-600 shadow-md text-xs text-white font-serif py-2 px-4 hover:bg-red-700 rounded uppercase" 
             onClick={clickDelete}
