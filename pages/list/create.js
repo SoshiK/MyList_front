@@ -13,7 +13,6 @@ export default function CreateList() {
       title: title,
       description: description
     }).then((res) => {
-      console.log(res);
       if(res.data.status === "ok") {
         router.back();
       }else {
